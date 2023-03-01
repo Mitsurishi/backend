@@ -1,5 +1,5 @@
 //1. Сумма двух чисел
-function addition(a, b) {
+export function addition(a, b) {
     a = a.split("").reverse();
     b = b.split("").reverse();
     let maxLen = Math.max(a.length, b.length);
@@ -17,7 +17,7 @@ function addition(a, b) {
     return sum.join("");
 }
 //2. Произведение двух чисел
-function multiplication(a, b) {
+export function multiplication(a, b) {
     const product = Array(a.length + b.length).fill(0);
     for (let i = a.length; i--; null) {
         let carry = 0;
@@ -31,7 +31,7 @@ function multiplication(a, b) {
     return product.join("").replace(/^0*(\d)/, "$1");
 }
 //3. Разность двух чисел
-function subtraction(a, b) {
+export function subtraction(a, b) {
     const diff = [a, b].map(n => [...n].reverse()).reduce((a, b) => a.reduce((r, d, i) => {
         let s = d - (b[i] || 0)
         if (s < 0) {
@@ -44,7 +44,7 @@ function subtraction(a, b) {
 }
 
 //4. Частное двух чисел
-function division(dividend, divisor) {
+export function division(dividend, divisor) {
     let quotient = "";
     let index = 0;
     let temp = dividend[index] - '0';

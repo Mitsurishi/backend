@@ -1,6 +1,6 @@
 //1.1. Преобразование строки к нижнему регистру, но первая буква большая.
 
-function ucFirst(str) {
+export function ucFirst(str) {
     let str2 = str.toLowerCase();
     str2 = str2.charAt(0).toUpperCase() + str2.slice(1);
     return str2;
@@ -8,20 +8,20 @@ function ucFirst(str) {
 
 //1.2. Преобразование строки с целью правильно расстановки пробелов.
 
-function spaceFixer(str) {
+export function spaceFixer(str) {
     return str.replace(/ +(\.)/g, '.').replace(/ +(\,)/g, ',').replace(/(\,)/g, '$1 ').replace(/(\.)/g, '$1 ').replace(/ +/g, ' ');
 }
 
 //1.3. Подсчёт кол-ва слов в строке.
 
-function wordCounter(str) {
+export function wordCounter(str) {
     let words = str.match(/\S+/g).length;
     return words;
 }
 
-//1.4. Подсчёт, уникальных слов.
+//1.4. Подсчёт уникальных слов.
 
-function uniqueWords(str) {
+export function uniqueWords(str) {
     str = str.toLowerCase();
     str = str.replace(/(\.)/g, '').replace(/(\,)/g, '');
     str = str.split(' ');
